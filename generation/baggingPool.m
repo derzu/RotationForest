@@ -12,6 +12,8 @@
 %
 % Forma de uso:
 % bag = baggingPool(data, labels, 10, 'k');
+%
+% $Author: Derzu Omaia
 function [pool] = baggingPool(dados, labels, T, classifier, varargin) % varargin eh uma lista de parametros.
     % trata se tem o parametro do tamanho do subconjunto, se nao tiver usa o default.
     if (length(varargin)==1)

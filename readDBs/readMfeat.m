@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readMfeat('data/UCI/mfeat/mfeat-fac.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readMfeat(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     fclose(file);

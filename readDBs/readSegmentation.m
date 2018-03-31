@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readSegmentation('data/UCI_segmentation/segmentation.data.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readSegmentation(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     

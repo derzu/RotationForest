@@ -1,7 +1,9 @@
-function [ vec ] = selectSubclassesVector( Y, remove )
 %SELECTSUBCLASSESVECTOR Aleatoriamente seleciona um um subconjunto de
 % classes de Y. Retorna o vetor com 1's nos indices das amostras das classes
 % selecionadas.
+%
+% $Author: Derzu Omaia
+function [ vec ] = selectSubclassesVector( Y, remove )
     % N - quantiade de amostras.
     N = length(Y);
     % W - Vetor de todas as classes.

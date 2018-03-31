@@ -1,5 +1,7 @@
 % Exemplo de chamada:
-% [dadosX, dadosY] = readDB(5);
+% [dadosX, dadosY] = readDB(5, DBsList);
+%
+% $Author: Derzu Omaia
 function [dadosXraw, dadosYraw] = readDB(indiceDB, DBS_name)
 %%%%% SELECIONA O BANCO DE DADOS %%%%%%%
 

@@ -1,5 +1,7 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readBalance('data/UCI/balance-scale/balance-scale.data.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readBalance(path)
     file = fopen(path);
     if file<=0

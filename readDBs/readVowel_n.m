@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readVowel_n('data/UCI/vowel/vowel-context.data.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readVowel_n(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     

@@ -12,6 +12,8 @@
 %
 % Forma de uso:
 % [Ra] = rotationForest(X, Y, K);
+%
+% $Author: Derzu Omaia
 function [ Ra ] = rotationForest( X, Y, K, remove)
     % N amostras (instances), n atributos (features).
     [N, n] = size(X);

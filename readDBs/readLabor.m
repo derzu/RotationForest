@@ -2,10 +2,12 @@
 % dataFull = readLabor('data/labor/labor-neg.data.txt');
 % data = dataFull{2};
 % labels = dataFull{1};
+%
+% $Author: Derzu Omaia
 function [data] = readLabor(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     

@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readMusk('data/UCI/musk/clean2.data');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readMusk(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     fclose(file);

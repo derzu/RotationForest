@@ -1,8 +1,16 @@
+% It's an implementation of the Rotation Forest Algorithm from paper from Kuncheva and Rodr?guez, 2016.
+% It's a MCS (Multiple Classifier Systems) and it's result is compared with the bagging MCS.
+%
+% The training an classification stages are run. It's tested using an 10-fold cross validation process.
+%
+% $Author: Derzu Omaia
+
 close all;
 
-% remove os warnings do prtools
+% remove prtools warnings
 prwarning(0);
 
+% teste index
 indiceDB = 6;
         
 DBS_name = [{'data/UCI/balance-scale/balance-scale.data.txt'} ;...%01  % 3 different classes 

@@ -11,6 +11,8 @@
 %
 % Exemplo de uso:
 % bag = bagging(data, 10);
+%
+% $Author: Derzu Omaia
 function [bag] = bagging(dados, T, varargin) % varargin eh uma lista de parametros.
     [M,D] = size(dados); % M amostras, D atributos.
 

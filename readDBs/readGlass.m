@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readGlass('data/UCI/glass/glass.data.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readGlass(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
     fclose(file);

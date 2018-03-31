@@ -1,9 +1,11 @@
 % Exemplo de chamada:
 % [dadosX, dadosY] = readSonar('data/UCI/sonar/sonar.all-data.txt');
+%
+% $Author: Derzu Omaia
 function [dataX, dataY] = readSonar(path)
     file = fopen(path);
     if file<=0
-        fprintf('Erro arquivo \"%s\" nao encontrado\n', path);
+        fprintf('Error file \"%s\" not found\n', path);
         return;
     end
 

@@ -1,6 +1,8 @@
 % classifica um conjunto de dados utilizand um POOL de classificadores.
 % Funde o resultado utilizando voto majoritario.
 % retorna taxa de erro.
+%
+% $Author: Derzu Omaia
 function [ erros ] = classificaPoolSimple( pool , data, labels)
     % T quantidade de classificadores no pool
     T = size(pool, 1);
@@ -19,10 +21,7 @@ function [ erros ] = classificaPoolSimple( pool , data, labels)
     
     
     resultadoFusao1 = majorityVoteSimple(resultados);
-    %size(resultados)
-    %size(resultadoFusao)
-    %size(labels)
-    %acertos = 0;
+
     erros = 0;
     for i=1:M
         if resultadoFusao1(i)~=labels(i)

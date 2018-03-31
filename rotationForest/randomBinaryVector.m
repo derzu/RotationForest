@@ -1,7 +1,9 @@
-function [ vec ] = randomBinaryVector( C )
-%RANDOMBINARYVECTOR gera um vetor binario aleatório de tamanho C.
+%RANDOMBINARYVECTOR gera um vetor binario aleat?rio de tamanho C.
 % Nao permite que o vetor seja todo de zeros ou todo de uns.
 %   C - tamanho do vetor a ser gerado.
+%
+% $Author: Derzu Omaia
+function [ vec ] = randomBinaryVector( C )
     if C==1
         vec = [1];
     else

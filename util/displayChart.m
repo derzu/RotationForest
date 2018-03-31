@@ -1,7 +1,8 @@
-function displayChart( accRotF1_m, accRotF2_m, Kini, Kp, Kfim, Lini, Lp, Lfim, leg1, leg2)
 %EXIBEGRAFICOS Summary of this function goes here
 %   Detailed explanation goes here
-
+%
+% $Author: Derzu Omaia
+function displayChart( accRotF1_m, accRotF2_m, Kini, Kp, Kfim, Lini, Lp, Lfim, leg1, leg2)
 linhas = [{'--b*'}; {'-ro'}; {':g+'}; {'--r*'}; {'-go'}; {':b+'}; {'--g*'}; {'-bo'}; {':r+'}];
 sLinha = size(linhas,1);
 
@@ -17,11 +18,8 @@ if Kfim-Kini > 0
     end
     hold off;
     title('Classificacao utilizando Rotation Forest');
-    %xlabel('Quant Classificadores no pool');
-    %xlabel('M elementos em cada split');
     xlabel('K splits');
     ylabel('Accurace Rate');
-    %legend('Data1(blue)', 'Data2 (red)');
     legend(leg1, leg2);
 end
 
