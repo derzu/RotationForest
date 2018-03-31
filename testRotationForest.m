@@ -26,7 +26,7 @@ DBS_name = [{'data/UCI/balance-scale/balance-scale.data.txt'} ;...%01  % 3 diffe
 
 [dadosX, dadosY] = readDB(indiceDB, DBS_name);
 
-fprintf('Testando DB %s\n', DBS_name{indiceDB});
+fprintf('Testing DB %s\n', DBS_name{indiceDB});
 Nfolds = 10;
 ratio=0.75;
 indices = crossvalind('Kfold', size(dadosX, 1), Nfolds);
@@ -36,10 +36,10 @@ accRotF_m=0;
 for Kfold=1:Nfolds
     % cross validation, separa os 2 grupos de treino e teste.
     test = (indices == Kfold); train = ~test;
-    testX = dadosX(test, :);
-    testY = dadosY(test, :);
-    trainX = dadosX(train, :);
-    trainY = dadosY(train, :);
+    testX = dadosX(test, :); % testX is de test set
+    testY = dadosY(test, :); % Y vector is a label vector
+    trainX = dadosX(train, :); % trainX is the training set
+    trainY = dadosY(train, :); % Y vector is a label vector
     
     numberfeature=size(trainX,2);
 
@@ -47,7 +47,7 @@ for Kfold=1:Nfolds
     % NUMERO CLASSIFICADORES NO ENSEMBLE.
     % VALOR USADO NO ARTIGO FOI 10
     % L=10; %% number of ensemble individuals;
-    % testar diferentes L's
+    % try diferentes L's
     Lini = 10;
     Lp   = 10;
     Lfim = 20;
@@ -94,14 +94,16 @@ for Kfold=1:Nfolds
 
     for L=Lini:Lp:Lfim
         for K=Kini:Kp:Kfim
-            % CRIA UM POOL USANDO BAGGING, so para comparacao
+            % Creat and classify a pool of classifing using just bagging, for comparation with the Rotation Forest.
             pool = baggingPool(trainX, trainY, L, 't');
             accBagg(floor((K-Kini)/Kp+1), floor((L-Lini)/Lp+1)) = 1-classificaPoolSimple(pool, testX, testY);
             accBagg_m(floor((K-Kini)/Kp+1), floor((L-Lini)/Lp+1)) = accBagg_m(floor((K-Kini)/Kp+1), floor((L-Lini)/Lp+1)) + accBagg(floor((K-Kini)/Kp+1), floor((L-Lini)/Lp+1));
-
+            % end of just bagging algorithm
+            
             prelabeltest = zeros(size(testX, 1), L);
             
-            % PARA CADA CLASSIFICADOR DO POOL
+            % Now starting Rotation Forest Algorithm
+            % Create L classifiers, and do the classification for each one.
             for l=1:L
                 %%% obtain the new samples by rotation forest %%%
                 Ra=rotationForest(trainX, trainY, K, 0);
@@ -109,7 +111,7 @@ for Kfold=1:Nfolds
                 % Treina usando arvore de decisao. Last param is the type of the tree.
                 arvore = geraDecisionTree(trainX*Ra, trainY, 0); 
                 
-                % CLASSIFICA USANDO ARVORE DECISAO.
+                % Classify using decision tree
                 if isa(arvore, 'prmapping')
                     prelabeltest(:,l) = labeld(testX*Ra, arvore);
                 else
@@ -117,7 +119,7 @@ for Kfold=1:Nfolds
                 end
             end
             
-            % algoritmo do voto majoritario.
+            % Majority vote for result fusion.
             [~, r] = majorityVoteSimpleTx(prelabeltest, testY);
             
             M = floor(numberfeature/K);

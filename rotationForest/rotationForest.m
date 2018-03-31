@@ -1,11 +1,14 @@
-% Gera um subconjutos diverso de dados a partir dos dados originais.
+% Create a diverse data subset from the original data.
+% Cria um subconjutos diverso de dados a partir dos dados originais.
 %
 % @param X conjunto de amostras. Matriz Nxn (linha x coluna). N amostras (instances), n features.
+%          Database samples. Nxn (line x row) matrix. N instances, n features.
 % @param Y (labels - Nx1) vetor com os rotulos dos objetos de X.
 % @param K numero de subsets desejados
+%        K number of desired subsets
 %
-% @return o subconjunto de dados diverso, X, e a matriz de transformacao,
-% matrix.
+% @return a matriz de transformacao
+% @return the transformation matrix
 %
 % Forma de uso:
 % [Ra] = rotationForest(X, Y, K);
@@ -17,9 +20,9 @@ function [ Ra ] = rotationForest( X, Y, K, remove)
     bootstrap = 0.75;
     %bootstrap = 1; % TODO UNDO
     
-    % W - Vetor de todas as classes.
+    % W - Vetor of all classes.
     W = unique(Y);
-    % C - quantiade de classes.
+    % C - quantity of classes.
     Cclasses = length(W);
 
     % M_ideal = quantidade features em cada subset.
@@ -61,10 +64,6 @@ function [ Ra ] = rotationForest( X, Y, K, remove)
         if sum(WCj)==1
             WCj = ~WCj;
         end
-
-        
-        %Xj1 = X(:, Fj)
-        %Xj2 = X(WCj, Fj)
 
         % Xj fica so com o subconjunto de features e classes.
         % Xj eh Nred x M. Nred amostras (instances), M features. O ultimo
