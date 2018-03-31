@@ -9,8 +9,11 @@ The training an classification stages are run. It's tested using an 10-fold cros
 * Add all folders to Matlab path
 * PRTools Decision Tree is used.
 * Download PRTools and add it's folder to the root folder of this project, and add to Matlab's path.
+
   http://37steps.com/prtools5-intro/
+
   http://prtools.org
+  
   Or unzip the prtools5.zip file at the project.
 
 
