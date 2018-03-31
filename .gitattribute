@@ -1,2 +1,1 @@
-* linguist-vendored
-*.txt linguist-vendored=true
+data/*.txt linguist-vendored=true
