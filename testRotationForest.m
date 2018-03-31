@@ -26,8 +26,8 @@ DBS_name = [{'data/UCI/balance-scale/balance-scale.data.txt'} ;...%01  % 3 diffe
             {'data/UCI/optdigits/optdigits.all'} ;...%11
             {'data/UCI/pendigits/pendigits.all'} ;...%12
             {'data/UCI/diabetes/pima-indians-diabetes.data.txt'} ;...%13
-            {'data/UCI/segmentation/segmentation.data.txt'} ;...%14 % 7 different classes 
-            {'data/UCI/segmentation/segmentation.test.txt'} ;...%15
+            {'data/UCI/segmentation/segmentation.data.data'} ;...%14 % 7 different classes 
+            {'data/UCI/segmentation/segmentation.test.data'} ;...%15
             {'data/UCI/sonar/sonar.all-data.txt'} ;...%16 
             {'data/UCI/vowel/vowel-context.data.txt'} ;...%17  % 10 different classes
             ];
