@@ -1,4 +1,4 @@
-# What does this code do?
+# What does this project do?
 
 It's an implementation of the Rotation Forest Algorithm from paper from Kuncheva and Rodríguez, 2016. It's a MCS (Multiple Classifier Systems) and it's result is compared with the bagging MCS.
 
