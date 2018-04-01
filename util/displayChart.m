@@ -1,5 +1,4 @@
 %EXIBEGRAFICOS Summary of this function goes here
-%   Detailed explanation goes here
 %
 % $Author: Derzu Omaia
 function displayChart( accRotF1_m, accRotF2_m, Kini, Kp, Kfim, Lini, Lp, Lfim, leg1, leg2)

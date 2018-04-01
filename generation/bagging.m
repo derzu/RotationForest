@@ -1,3 +1,4 @@
+% Bootstrap AGGregatING algorithm from BREIMAN, 1996
 % Gera T subconjutos de dados
 %
 % @param dados matriz MxD (linha x coluna). M amostras (instances), D atributos (features).

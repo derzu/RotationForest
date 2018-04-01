@@ -1,5 +1,5 @@
 %
-%
+% $Author: Derzu Omaia
 function [m] = geraDecisionTree(data, labels, tipo)
 
     %m = ClassificationTree.fit(data, labels);
